@@ -115,3 +115,23 @@ Show the contents of the latest stable version of the main aspect of chapter 2 o
 List comments related to dyslectic's aspect of chapter 2 in the history book.
 
 
+## API versioning
+
+Do NOT version the URL part of the API, instead make sure the content can
+grow and change as needed. E.g. use key-value hashes for data (JSON is
+good). Remember to add an informational version field (named "api-version",
+all lowercase) to content where this makes sense (e.g. JSON, HTML, XML or
+YAML, but not binary blobs like images and archives.
+
+API version numbers have the following format:  major.minor
+
+If the minor part is incremented, this is a signal that the API has had
+a backward-compatible *addition* to the API keys.
+
+If the major part is incremented, this is a signal that the API has had
+a backward-INCOMPADIBLE change. This may include removal or renaming of keys
+or change to the content of the values (e.g. type information).
+
+PLEASE AVOID CHANGING THE THE API IN BACKWARD-INCOMPATIBLE WAYS.
+
+
